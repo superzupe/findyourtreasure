@@ -2,11 +2,12 @@
 
 :root {
     --bg: #D0F0FF;
-    --card: #FFF2B8;
+    --big-card: #f1f1f1;
+    --card: #FFF176;
     --card-2: #BEE8FF;
     --border: #A9D6F5;
-    --button: #A9D6F5;
-    --button-hover: #88C3F0;
+    --button: #FFF176;
+    --button-hover: #FFEE58;
     --text-button: #1F1F1F;
     --text-1: #1F1F1F;
     --text-2: #3B4752;
@@ -37,18 +38,30 @@ body {
     gap: 24px;
 }
 
-.card, .card-2 {
+.big-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    background-color: var(--big-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    gap: 16px;
+    padding: 20px 16px;
+}
+
+.card, #card {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 80vw;
+    width: 70vw;
     background-color: var(--card);
     border: 1px solid var(--border);
     border-radius: 24px;
-    gap: 16px;
     padding: 20px 16px;
 }
 
@@ -68,6 +81,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    width: 50vw;
     gap: 8px;
 }
 
@@ -88,14 +103,21 @@ body {
     background-color: var(--button-hover);
 }
 
-.card-2 {
-    display: none;
+#card {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    pointer-events: none;
     background-color: var(--card-2);
 }
 
-.card-2 p {
+#card.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#card p {
     font-family: "Cormorant Garamond", serif;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 900;
     color: var(--text-3);
 }
