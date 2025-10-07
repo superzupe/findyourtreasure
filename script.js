@@ -26,7 +26,7 @@ const quote = document.getElementById("quote");
 
 function generateQuote() {
   if (usesIndexes.size >= quotes.length) { //jika isi box lebih dari isi quotes, maka hapus isi box
-    usesIndexes.clear();
+    usesIndexes.clear(); // bila nggak ada ini, jadinya web nge freeze, karena ngulangin kondisi while continue itu
   }
 
   while (true) {
